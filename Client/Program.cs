@@ -90,7 +90,7 @@ namespace Client
                         Console.WriteLine($"Error: {ex.Message}");
                     }
 
-                    if (choice != 8)
+                    if (choice != 7)
                     {
                         Console.WriteLine("\nPress any key to continue...");
                         Console.ReadKey();

@@ -12,7 +12,6 @@ namespace ServiceContracts
         public static Dictionary<int, ParkingZone> zones = new Dictionary<int, ParkingZone>();
         public static List<ParkingPayment> payments = new List<ParkingPayment>();
         public static List<PenaltyTicket> penaltyTickets = new List<PenaltyTicket>();
-        public static List<User> users = new List<User>();
 
         static DataBase()
         {

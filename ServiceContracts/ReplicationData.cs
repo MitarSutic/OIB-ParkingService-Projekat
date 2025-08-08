@@ -10,18 +10,12 @@ namespace ServiceContracts
     public class ReplicationData
     {
         [DataMember]
-        public byte[] EncryptedZones { get; set; }
+        public Dictionary<int,ParkingZone> Zones { get; set; }
 
         [DataMember]
-        public byte[] EncryptedPayments { get; set; }
+        public List<ParkingPayment> Payments { get; set; }
 
         [DataMember]
-        public byte[] EncryptedTickets { get; set; }
-
-        [DataMember]
-        public byte[] DigitalSignature { get; set; }
-
-        [DataMember]
-        public byte[] IV { get; set; } // Initialization Vector for CBC mode
+        public List<PenaltyTicket> Tickets { get; set; }    
     }
 }

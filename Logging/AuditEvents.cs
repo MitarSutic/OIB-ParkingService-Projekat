@@ -15,7 +15,14 @@ namespace Logging
         AuthorizationFailed = 2,
         DatabaseOperationSuccess = 3,
         DatabaseOperationFailed = 4,
-        SystemEvent = 5
+        SystemEvent = 5,
+        BackupStarted = 6,
+        BackupCompleted = 7,
+        BackupFailed = 8,
+        DataDecrypted = 9,
+        SignatureVerified = 10,
+        CertificateValidated = 11,
+        Failover = 12
     }
 
     public class AuditEvents
@@ -87,5 +94,41 @@ namespace Logging
                 return ResourceManager.GetString(AuditEventsTypes.SystemEvent.ToString());
             }
         }
+
+        public static string BackupStarted
+        {
+            get { return ResourceManager.GetString(AuditEventsTypes.BackupStarted.ToString()); }
+        }
+
+        public static string BackupCompleted
+        {
+            get { return ResourceManager.GetString(AuditEventsTypes.BackupCompleted.ToString()); }
+        }
+
+        public static string BackupFailed
+        {
+            get { return ResourceManager.GetString(AuditEventsTypes.BackupFailed.ToString()); }
+        }
+
+        public static string DataDecrypted
+        {
+            get { return ResourceManager.GetString(AuditEventsTypes.DataDecrypted.ToString()); }
+        }
+
+        public static string SignatureVerified
+        {
+            get { return ResourceManager.GetString(AuditEventsTypes.SignatureVerified.ToString()); }
+        }
+
+        public static string CertificateValidated
+        {
+            get { return ResourceManager.GetString(AuditEventsTypes.CertificateValidated.ToString()); }
+        }
+
+        public static string Failover
+        {
+            get { return ResourceManager.GetString(AuditEventsTypes.Failover.ToString()); }
+        }
+
     }
 }

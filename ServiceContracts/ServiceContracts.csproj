@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase.cs" />
+    <Compile Include="IPrimaryService.cs" />
     <Compile Include="ISecurityService.cs" />
     <Compile Include="ParkingPayment.cs" />
     <Compile Include="ParkingZone.cs" />

@@ -1,11 +1,15 @@
-﻿using Logging;
-using ServiceContracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Claims;
+using System.IO;
 using System.Linq;
-using System.Security.Principal;
-using System.Threading;
 using System.Security;
+using System.Security.Principal;
+using System.ServiceModel;
+using System.Threading;
+using Logging;
+using SecurityManagers;
+using ServiceContracts;
 
 
 namespace SecurityService
@@ -340,38 +344,6 @@ namespace SecurityService
             }
         }
 
-        /// <summary>
-        /// Add new user to UserAccountsDB. Dictionary Key is "username"
-        /// </summary>
-        //public void AddUser(string username, string password) // OVO CEMO MENJATI PRE NEGO PUSH-UJEMO
-        //{
-        //    if (!UserAccountsDB.ContainsKey(username))
-        //    {
-        //        UserAccountsDB.Add(username, new User(username, password));
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine($"Korisnik sa korisnickim imenom {username} vec postoji u bazi");
-        //    }
-
-        //    IIdentity identity = Thread.CurrentPrincipal.Identity;
-
-        //    Console.WriteLine("Tip autentifikacije : " + identity.AuthenticationType);
-
-        //    WindowsIdentity windowsIdentity = identity as WindowsIdentity;
-
-        //    Console.WriteLine("Ime klijenta koji je pozvao metodu : " + windowsIdentity.Name);
-        //    Console.WriteLine("Jedinstveni identifikator : " + windowsIdentity.User);
-
-        //    Console.WriteLine("Grupe korisnika:");
-        //    foreach (IdentityReference group in windowsIdentity.Groups)
-        //    {
-        //        SecurityIdentifier sid = (SecurityIdentifier)group.Translate(typeof(SecurityIdentifier));
-        //        string name = (sid.Translate(typeof(NTAccount))).ToString();
-        //        Console.WriteLine(name);
-        //    }
-        //}
-
         public bool DeletePenaltyTicket(string licensePlate)
         {
             WindowsIdentity windowsIdentity = Thread.CurrentPrincipal.Identity as WindowsIdentity;
@@ -427,6 +399,16 @@ namespace SecurityService
                 Audit.DatabaseOperationFailed("DeletePenaltyTicket", ex.Message);
                 return false;
             }
+        }
+
+        public byte[] GetReplicationData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TestCommunication()
+        {
+            Console.WriteLine("Communication established.");
         }
     }
 }
